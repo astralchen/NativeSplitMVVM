@@ -1,0 +1,9 @@
+iPad (A16), iOS 27.2 — 2026-11-03
+Extracted from the completed local xcodebuild test log.
+The MCP call timed out; the underlying test execution completed successfully.
+
+Test Case '-[NativeSplitMVVMUITests.NativeSplitMVVMUITests testExpandedTabAndDetailAreIndependent]' passed (86.265 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 86.265 (86.479) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 86.265 (86.507) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 86.265 (89.845) seconds
+** TEST EXECUTE SUCCEEDED **

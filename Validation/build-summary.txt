@@ -1,0 +1,5 @@
+Xcode 27.2 (27B52), iOS Simulator
+Minimum app deployment target: iOS 15.0
+Initial app and test-target build: succeeded.
+Final build after sidebar button correction: succeeded (215.9 seconds).
+Raw build logs are retained locally and excluded from Git.

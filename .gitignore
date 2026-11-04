@@ -1,0 +1,10 @@
+.DS_Store
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+
+# Raw local validation logs contain machine-specific paths.
+/Validation/build.txt
+/Validation/final-build.txt
+/Validation/ipad-ui-test.txt

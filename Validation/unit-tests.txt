@@ -1,0 +1,59 @@
+================================================================================
+TEST RESULTS SUMMARY
+================================================================================
+Generated: 2026-11-03T10:38:20Z
+Total Results: 4
+================================================================================
+
+--------------------------------------------------------------------------------
+TEST_RESULT_INDEX: 1/4
+TEST_TARGET: NativeSplitMVVMTests
+TEST_IDENTIFIER: NativeSplitMVVMTests/testEachTabRetainsItsOwnRoute()
+TEST_DISPLAY_NAME: testEachTabRetainsItsOwnRoute()
+TEST_STATE: Passed
+TEST_FILE_PATH: (not available)
+TEST_LINE_NUMBER: (not available)
+TEST_TAGS: (none)
+
+TEST_ISSUE_COUNT: 0
+
+--------------------------------------------------------------------------------
+TEST_RESULT_INDEX: 2/4
+TEST_TARGET: NativeSplitMVVMTests
+TEST_IDENTIFIER: NativeSplitMVVMTests/testSelectingNewConversationClearsOldInfoPath()
+TEST_DISPLAY_NAME: testSelectingNewConversationClearsOldInfoPath()
+TEST_STATE: Passed
+TEST_FILE_PATH: (not available)
+TEST_LINE_NUMBER: (not available)
+TEST_TAGS: (none)
+
+TEST_ISSUE_COUNT: 0
+
+--------------------------------------------------------------------------------
+TEST_RESULT_INDEX: 3/4
+TEST_TARGET: NativeSplitMVVMTests
+TEST_IDENTIFIER: NativeSplitMVVMTests/testCompactAndExpandedScreensShareConversationState()
+TEST_DISPLAY_NAME: testCompactAndExpandedScreensShareConversationState()
+TEST_STATE: Passed
+TEST_FILE_PATH: (not available)
+TEST_LINE_NUMBER: (not available)
+TEST_TAGS: (none)
+
+TEST_ISSUE_COUNT: 0
+
+--------------------------------------------------------------------------------
+TEST_RESULT_INDEX: 4/4
+TEST_TARGET: NativeSplitMVVMTests
+TEST_IDENTIFIER: NativeSplitMVVMTests/testSendRejectsWhitespaceAndClearsSuccessfulDraft()
+TEST_DISPLAY_NAME: testSendRejectsWhitespaceAndClearsSuccessfulDraft()
+TEST_STATE: Passed
+TEST_FILE_PATH: (not available)
+TEST_LINE_NUMBER: (not available)
+TEST_TAGS: (none)
+
+TEST_ISSUE_COUNT: 0
+
+
+================================================================================
+END OF TEST RESULTS SUMMARY
+================================================================================
