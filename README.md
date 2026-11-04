@@ -74,4 +74,6 @@ UISplitViewController（collapsed）
 
 实际编译、自动化测试和模拟器验证结果见 `VALIDATION.md`。最终 iPad 预览见 `Validation/ipad-fixed.jpg`。
 
+2026-11-04 已使用 Xcode 27.2 的 **Device Hub** 在 Duo / iOS 27.2 上实际切换 Closed、Partially Open、Open，完成 Tab、聊天信息导航、返回列表、跨会话草稿及发送后状态验证；步骤与截图见 [Duo 开合验证](Validation/duo-fold-validation.md)。这轮检查没有发现需要修改业务代码的问题。iOS 15 仍只有部署版本和编译层面的支持，未获得对应 runtime 的运行证据。
+
 右侧系统侧栏按钮按显示模式安装：双栏并排时不添加，避免较新系统产生无图标的玻璃圆形；secondary-only 或 overlay 模式才提供该入口。

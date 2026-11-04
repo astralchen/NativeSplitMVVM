@@ -1,5 +1,30 @@
 # 验证记录
 
+## 2026-11-04：Duo 实际姿态切换复核
+
+在 Xcode 27.2 / iOS 27.2 的 iPhone Duo Simulator 上，使用 **Device Hub** 的 Closed、Partially Open、Open 按钮执行了同一进程内连续 14 次姿态切换。App 源码为 `836510747283b8b4f745dcdf773724817850d7cc`；XcodeBuildMCP `build_run_sim` 重新构建、安装和启动成功，构建日志包含 `BUILD SUCCEEDED`。本次只补充验证文档和截图，没有修改业务代码。
+
+通过 Device Hub 的界面操作、无障碍值和实际截图核验以下路径，均未观察到 Tab 丢失、导航跳错、草稿丢失或串会话：
+
+| 场景 | 实际结果 |
+| --- | --- |
+| Closed 聊天输入 `Duo-fold-draft-1104` → Open | 左侧列表及三个原生 Tab 恢复，右侧仍为果子聊天，草稿内容一致 |
+| Open 聊天信息打开免打扰 → Closed → Open | 两种布局均停留在聊天信息，`info.muted` 保持 `1`；单栏详情隐藏 Tab，展开后左栏 Tab 恢复 |
+| 信息页 → 工作台 → 日程 → Closed → Open → 消息 | 工作台选择及日程详情保持；回消息恢复果子聊天信息和免打扰，返回聊天后原草稿仍在 |
+| 信息页返回聊天 → Closed → 返回列表 → Open | 不会恢复已经 pop 的信息页或聊天；右侧显示“选择一个项目” |
+| 重新选择果子 | 路由已清除，但会话草稿仍为 `Duo-fold-draft-1104` |
+| 更新为 `Duo-keyboard-draft-1104` → Partially Open → Closed → Open | 半展开时输入栏位于软件键盘上方；折叠时键盘收起，草稿保留，再展开内容一致 |
+| 设计讨论组输入 `Team-only-draft` → 果子 | 两个会话分别保留自己的草稿，没有混用 |
+| 果子发送 → Closed → Open | 已发送文本仍显示在消息列表；草稿为空，没有因开合恢复已发送文本 |
+| 再选设计讨论组 | 草稿仍为 `Team-only-draft` |
+| 通讯录 → 小林 → Closed → Open → 消息 | 通讯录 Tab 和小林详情保持；切回消息恢复设计讨论组及其草稿 |
+
+这轮验证通过 CUA 操作真实模拟器界面完成，**不是新增 XCTest 通过数量**，也不是通过旋转代替折叠。完整的可复现步骤及证据索引见 [Duo 验证记录](Validation/duo-fold-validation.md)。此前 2026-11-03 的 Duo 开合未验证结论由本节补充；历史记录仍保留如下。
+
+边界：尚未验证取消交互式返回手势、切换动画中连续点击、长列表锚点、进程终止恢复、全部窗口尺寸、真机及 iOS 15 runtime。键盘焦点不在恢复范围内，折叠时主动收起符合当前实现。
+
+## 2026-11-03：首次验证
+
 日期：2026-11-03（Asia/Shanghai）。工程通过 Xcode MCP `XcodeNewProject` 创建，App、XCTest、UI Test Target 均由模板生成，业务代码为 UIKit + MVVM + Coordinator。
 
 ## 已确认
@@ -31,7 +56,7 @@
 - 没有 iOS 15 runtime，未执行 iOS 15 运行测试，也未进行真机验证。
 - Xcode 27.2 的 XCTest dylib 链接最低版本高于 15.0，测试 Target 构建出现对应 warning；这是测试工具链限制。App 目标以 iOS 15.0 编译成功，但不能据此声称 iOS 15 已实测。
 
-## 仍需手动核验
+## 首次验证时的待核验项（状态更新见上方 2026-11-04 记录）
 
 1. Duo Open / Landscape 下：左栏为 Tab + 列表，右栏为详情导航。
 2. 聊天信息页反复开合：折叠后仍在信息页，展开后左侧回列表、右侧仍在信息页。
